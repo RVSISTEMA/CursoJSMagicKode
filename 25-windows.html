@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Windows</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <button onclick="Atras()">Atras</button>
+        <button onclick="Adelante()">Adelante</button>
+        <button onclick="miFuncion()">Prueba</button>
+        <p id="demo"></p>
+        
+        <button onclick="miPrompt()">Prompt</button>
+        <p id="demo2"></p>
+        <button onclick="SetTimeOut(miAlerta,1000)">Alerta</button>
+        <p id="demo3"></p>
+        <script>
+            //window.location
+            //locaion.href
+            //window.screen :width, heigth
+            //window.history
+
+            function Atras(){
+                history.back //<-
+                
+            }
+
+            function Adelante(){
+                history.forward
+
+            }
+            //window.alert
+
+            function miFuncion(){
+                var txt="";
+
+                if (confirm("Deseas Confirmar?")){
+                    txt="COnfirmaste!!! OK"
+
+                } else{
+                    txt="Cancelaste!!!"
+                }
+
+                document.getElementById("demo").innerHTML=txt;
+
+            }
+            
+            function miPrompt(){
+                var txt="";
+                var persona=prompt("Ingrese su nombre por favor", "Juancito Perez");
+                if (persona==null || persona==""){
+                    txt="El usuario no ingreso el nombre";
+
+                } else {
+                    txt="Hola " + persona + "!!!. Bienvenido al sitio"
+                }
+                document.getElementById("demo2").innerHTML=txt;
+            }
+
+            function Reloj(){
+                var d=new Date;
+                document.getElementById("demo3").innerHTML=d.toLocaleString();
+
+            }
+            
+            var mi=setInterval(demo3,1000)
+        </script>
+    </body>
+</html>
